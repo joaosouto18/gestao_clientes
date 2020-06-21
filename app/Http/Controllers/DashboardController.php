@@ -12,6 +12,12 @@ use DB;
 class DashboardController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+
+        // $this->middleware('guest', ['except' => ['logout', 'logout']]);
+    }
 
 
 
