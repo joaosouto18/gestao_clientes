@@ -10,14 +10,14 @@
     <table class="table table-ordered table-sidebar">
         <tbody>
             <tr>
-                <td class="td-sidebar"><a href="{{ route('lista_clientes') }}"><i class="fas fa-user-circle"></i>   Clientes</a></td>
+                <td class="td-sidebar"><a href="{{ route('lista_clientes') }}"><i class="fas fa-user-alt"></i>   Clientes</a></td>
             </tr>
             <tr>
                 <td class="td-sidebar">
 
                     <a href="{{ route('logout') }}">
 
-                        <i class="fas fa-user-alt"></i>   Sair
+                        <i class="fas fa-power-off"></i>   Sair
                     </a>
 
                 </td>

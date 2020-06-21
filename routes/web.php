@@ -11,31 +11,28 @@ Route::get('/login', function () {
     return view('login');
 });
 
+//Route::post('/login', 'LoginController@login');
+
+
 Route::post('/checklogin', 'LoginController@checklogin')->name('login.submit');
 
 
-Route::get('/dashboard', 'LoginController@dashboard');
+Route::get('/dashboard', 'DashboardController@dashboard');
 
 
-//Route::get('/dashboard', 'LoginController@dashboard');
+//Route::group(['middleware' => ['auth']], function (){
+    //Route::get('/logout','LoginController@logout')->name('logout');
+//});
+
+Route::get('/logout', 'LoginController@logout')->name('logout');
+
+//Route::group(['middleware' => 'my_auth'], function() {
+//
+//    Route::get('/logout','LoginController@logout')->name('logout');
+//
+//});
 
 
-
-
-
-
-
-
-
-//Route::post('/login', 'LoginController@login')->name('login.submit');
-//Route::get('/', 'LoginController@index')->name('dashboard');
-
-
-Route::get('/logout','LoginController@logout')->name('logout');
-
-
-// LOGIN - POST
-//Route::get('/login', 'ClienteController@index')->name('lista_clientes');
 
 // Cliente - Get
 Route::get('/clientes', 'ClienteController@index')->name('lista_clientes');
