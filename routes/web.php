@@ -20,6 +20,8 @@ Route::post('/checklogin', 'LoginController@checklogin')->name('login.submit');
 
 //Route::post('/dashboard', 'DashboardController@dashboard');
 
+Route::get('/login', 'DashboardController@login');
+
 Route::get('/dashboard', 'DashboardController@dashboard');
 
 
