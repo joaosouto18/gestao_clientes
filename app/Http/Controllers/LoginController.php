@@ -6,10 +6,10 @@ namespace App\Http\Controllers;
 use App\Cliente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Input;
 use Validator;
 use Session;
 use DB;
+use Illuminate\Support\Facades\Hash;
 
 
 
@@ -30,77 +30,39 @@ class LoginController extends Controller
     public function checklogin(Request $request){
 
         // validar o dado que vem do formulario
-//        $request->validate([
-//            'email' => 'required|email',
-//            'password' => 'required|min:6'
-//        ]);
-
-        $rules = array(
-            'email'    => 'required|email',
+        $request->validate([
+            'email' => 'required|email',
             'password' => 'required|min:6'
+        ]);
+
+
+
+        $user_data = array(
+            'email' => $request->get('email'),
+            'password' => $request->get('password')
         );
 
-        $validator = Validator::make(Input::all(), $rules);
 
-        if ($validator->fails()) {
-            return Redirect::to('/')
-                ->withErrors($validator) // send back all errors to the login form
-                ->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
-        }
-        else {
-
-            // create our user data for the authentication
-            $userdata = array(
-
-                'password' => Input::get('password'),
-                'email' => Input::get('email')
-            );
-
-
-            // attempt to do the login
-            if (Auth::attempt($userdata, true)) {
-
-                // validation successful!
-                // redirect them to the secure section or whatever
-                // return Redirect::to('secure');
-                // for now we'll just echo success (even though echoing in a controller is bad)
-                //return Redirect::to('Home');
-                echo 'SUCCESS!';
-                echo Auth::user()->uname;
-
-                Session::put('usuario', "logado");
-                return redirect('/dashboard');
-
-            } else {
-
-                // validation not successful, send back to form
-                echo "string";
-
-
-            }
-        }
-
-
-//        $user_data = array(
-//            'email' => $request->get('email'),
-//            'password' => $request->get('password')
-//        );
-//
-//
-//        var_dump(Auth::user());
+//        var_dump($user_data);
+//       // var_dump(Hash::make(Request::input('password')));
 //
 //        exit();
-//
-//
-//        if(Auth::attempt($user_data,true))
-//        {
-//            Session::put('usuario', "logado");
-//            return redirect('/dashboard');
-//        }
-//        else
-//        {
-//            return back()->with('error', 'Usuário ou Senha incorretos');
-//        }
+
+
+        if(Auth::attempt($user_data,true))
+        {
+
+
+            Session::put('usuario', "logado");
+            return redirect('/dashboard');
+        }
+        else
+        {
+
+            var_dump($user_data);
+            exit();
+            return back()->with('error', 'Usuário ou Senha incorretos');
+        }
 
     }
 
