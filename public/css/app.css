@@ -11515,22 +11515,19 @@ ul.pagination {
 }
 
 
-
-    .small-box .icon>i.fa, .small-box .icon>i.fab, .small-box .icon>i.far, .small-box .icon>i.fas, .small-box .icon>i.glyphicon, .small-box .icon>i.ion {
+.small-box .icon>i.fa, .small-box .icon>i.fab, .small-box .icon>i.far, .small-box .icon>i.fas, .small-box .icon>i.glyphicon, .small-box .icon>i.ion {
         font-size: 70px;
         top: 20px;
-    }
+}
 
-    .small-box .icon>i {
+.small-box .icon>i {
         font-size: 90px;
         position: absolute;
         right: 15px;
         top: 15px;
         transition: all .3s linear;
-    }
+}
 
-
-
-    .bg-info, .bg-info>a {
-        color: #fff!important;
-    }
+.bg-info, .bg-info>a {
+    color: #fff !important;
+}
