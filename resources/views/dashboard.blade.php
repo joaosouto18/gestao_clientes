@@ -70,21 +70,10 @@
                                     <a href="/dashboard" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
-                            <!-- ./col -->
                         </div>
-                        <!-- /.row -->
-                        <!-- Main row -->
-
-                        <!-- /.row (main row) -->
-                    </div><!-- /.container-fluid -->
+                    </div>
                 </section>
-
-
-
-
-
             </div>
-
         </div>
     </div>
     </div>

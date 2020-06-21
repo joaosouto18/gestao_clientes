@@ -9,17 +9,11 @@
                     <div class="col-10">
                         <h5 class="card-title"><i class="fas fa-user-circle"></i> Lista de Clientes </h5>
                     </div>
-
-
-
-
-
                 </div>
                 <div class="row">
                     <div class="col-9">
                         <div class="card">
                             <div class="card-header"> Pesquisar
-
                             </div>
                             <div class="card-body">
                                     <div class="form-group">
@@ -38,15 +32,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-
-
                                             <div class="col-3" style="text-align: center">
-                                                        <a class="btn btn-create"><i class="fas fa-search"></i><strong> Pesquisar </strong></a>
+                                                  <a class="btn btn-create"><i class="fas fa-search"></i><strong> Pesquisar </strong></a>
                                             </div>
                                         </div>
-
-
                                     </div>
                             </div>
                         </div>
@@ -55,7 +44,6 @@
                     <div class="col-3">
                         <div class="card">
                             <div class="card-header"> Novo Cliente
-
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
@@ -70,11 +58,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
             </div>
 
                 <table class="table table-ordered table-hover table-striped" id="table_cliente">
@@ -93,83 +76,18 @@
 
                         @foreach ($clientes as $cliente)
                             <tr>
-
                                 <td>{{$cliente->nome}}</td>
                                 <td>{{$cliente->email}}</td>
                                 <td>{{$cliente->idade}}</td>
                                 <td>{{$cliente->telefone}}</td>
                                 <td> <a href="/clientes/edit/{{ $cliente->id }}" class="btn btn-sm btn-primary">Alterar</a> </td>
                                 <td> <a href="/clientes/deletar/{{ $cliente->id }}" class="btn btn-sm btn-danger">Deletar</a> </td>
-
                             </tr>
                         @endforeach
-
                     </tbody>
-
                 </table>
             </div>
         </div>
 </div>
-
-@endsection
-
-@section('javascriptPagination')
-
-<script type="text/javascript">
-
-
-
-
-$(document).ready(function() {
-
-    // var table = $('#table_cliente').DataTable();
-    //
-    // // Event listener to the two range filtering inputs to redraw on input
-    // $('#nome').keyup( function() {
-    //     table.draw();
-    // } );
-
-    // $('#table_cliente').DataTable( {
-    //     initComplete: function () {
-    //         this.api().columns().every( function () {
-    //             var column = this;
-    //             var select = $('<select><option value=""></option></select>')
-    //                 .appendTo( $(column.footer()).empty() )
-    //                 .on( 'change', function () {
-    //                     var val = $.fn.dataTable.util.escapeRegex(
-    //                         $(this).val()
-    //                     );
-    //
-    //                     column
-    //                         .search( val ? '^'+val+'$' : '', true, false )
-    //                         .draw();
-    //                 } );
-    //
-    //             column.data().unique().sort().each( function ( d, j ) {
-    //                 select.append( '<option value="'+d+'">'+d+'</option>' )
-    //             } );
-    //         } );
-    //     }
-    // } );
-
-
-
-        // "language": {
-        //     "search": "Filtrar",
-        //     "lengthMenu": "Itens por página _MENU_",
-        //     "zeroRecords": "Nenhum cliente",
-        //     "info": "Página _PAGE_ de _PAGES_",
-        //     "infoEmpty": "Nenhum Registro",
-        //     "infoFiltered": "",
-        //     "paginate": {
-        //         "previous": "Início",
-        //         "next": "Próxima",
-        //         "last": "Última",
-        //     }
-        // }
-
-} );
-
-</script>
 
 @endsection

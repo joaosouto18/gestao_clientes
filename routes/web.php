@@ -11,32 +11,15 @@ Route::get('/login', function () {
     return view('login');
 });
 
+//LOGIN GET
+Route::get('/login', 'LoginController@login');
 
-//Route::post('/login', 'LoginController@login');
-
-
+//LOGIN POST
 Route::post('/checklogin', 'LoginController@checklogin')->name('login.submit');
 
 
-//Route::post('/dashboard', 'DashboardController@dashboard');
-
-Route::get('/login', 'DashboardController@login');
-
-Route::get('/dashboard', 'DashboardController@dashboard');
-
-
-//Route::group(['middleware' => ['auth']], function (){
-    //Route::get('/logout','LoginController@logout')->name('logout');
-//});
-
-Route::get('/logout', 'LoginController@logout')->name('logout');
-
-//Route::group(['middleware' => 'my_auth'], function() {
-//
-//    Route::get('/logout','LoginController@logout')->name('logout');
-//
-//});
-
+//DASHBOARD
+Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
 
 
 // Cliente - Get
@@ -49,3 +32,6 @@ Route::get('/clientes/edit/{id}','ClienteController@edit');
 Route::post('/clientes', 'ClienteController@store');
 Route::post('/clientes/{id}', 'ClienteController@update');
 
+
+//LOGOUT
+Route::get('/logout', 'LoginController@logout')->name('logout');

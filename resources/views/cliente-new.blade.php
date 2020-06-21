@@ -24,10 +24,8 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="row">
-
                     <div class="col-4">
                         <div class="form-group">
                             <label for="telcel">Email:</label> <label class="required" >*</label>
@@ -45,12 +43,8 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
                 <div class="row">
-
-
                     <div class="col-4">
                         <div class="form-group">
                             <label for="birth_date">Dt. Nascimento:</label> <label class="required" >*</label>
@@ -60,7 +54,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-3">
                         <div class="form-group">
                             <label for="tel">Telefone:</label>
@@ -72,11 +65,8 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <hr>
-
-
                 <div class="pr-3" style="text-align: right;">
                     <button type="button" onClick="cancelar()" class="btn btn-cancel">Cancelar</button>
                     <button type="submit" class="btn btn-default ml-2">Salvar</button>
@@ -91,7 +81,6 @@
 @section('javascript')
 
 <script type="text/javascript">
-
 
 
         //máscaras
@@ -113,8 +102,6 @@
             var url = '{{ route("lista_clientes") }}';
             window.location.href = url;
         }
-
-
 
 
 </script>

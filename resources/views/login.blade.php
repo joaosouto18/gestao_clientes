@@ -279,14 +279,10 @@
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
-        <!-- Tabs Titles C:\Users\jvict\Documents\Alura\Cursos\php\sistema_gestao_clientes\public\images -->
-
         <!-- Icon -->
         <div class="fadeIn first">
             <img src="images\sysfar.png" id="icon" alt="User Icon" />
         </div>
-
-
         <!-- Login Form -->
         <form action="{{ route('login.submit') }}" method="POST" >
             {{ csrf_field() }}
@@ -311,7 +307,6 @@
                 <script>window.location="/dashboard";</script>
             @endif
 
-
                 @if ($message = Session::get('error'))
                     <div class="alert alert-danger alert-block">
                         <button type="button" class="close" data-dismiss="alert">×</button>
@@ -328,9 +323,7 @@
                         </ul>
                     </div>
                 @endif
-
         </div>
-
     </div>
 </div>
 

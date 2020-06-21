@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Cliente;
 use App\Empresa;
+use Auth;
 
 class ClienteController extends Controller
 {
@@ -17,11 +18,13 @@ class ClienteController extends Controller
      */
     public function index()
     {
+
+        if(!Auth::user()){
+            return redirect('/logout');
+        }
+
         $clientes = Cliente::all();
 
-
-
-        //return view('cliente-list', compact('clientes'));
         return view('cliente-list', compact('clientes'));
     }
 
@@ -32,6 +35,12 @@ class ClienteController extends Controller
      */
     public function create()
     {
+
+        if(!Auth::user()){
+            return redirect('/logout');
+        }
+
+
         $clientes = Cliente::all();
         return view('cliente-new', compact('clientes'));
     }
@@ -44,6 +53,11 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
+
+        if(!Auth::user()){
+            return redirect('/logout');
+        }
+
         $message = [
             'required' => 'Campo Obrigatório',
             'integer' => 'Insira um valor válido',
@@ -82,16 +96,7 @@ class ClienteController extends Controller
         return redirect('/clientes');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Cliente  $cliente
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Cliente $cliente)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -101,7 +106,9 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        //$clientes = Cliente::all();
+        if(!Auth::user()){
+            return redirect('/logout');
+        }
 
         $cli = Cliente::find($id);
 
@@ -111,7 +118,6 @@ class ClienteController extends Controller
 
         return redirect('/clientes');
 
-      //  return view('cliente-edit', compact('clientes'));
     }
 
     /**
@@ -123,6 +129,10 @@ class ClienteController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        if(!Auth::user()){
+            return redirect('/logout');
+        }
 
         $cli = Cliente::find($id);
 
@@ -151,31 +161,6 @@ class ClienteController extends Controller
 
         return redirect('/clientes');
 
-//       // $student = Student::find($id);
-//
-//        $cliente->nome = $request->input('nome');
-//        $cliente->telefone = $request->input('tel');
-//        $cliente->email = $request->input('email');
-//        $cliente->birth_date = $request->input('birth_date');
-//
-//
-//        /*CALCULO DA IDADE*/
-//            $newFormatDate =  date("d/m/Y", strtotime($cliente->birth_date));
-//            //Separa em dia, mês e ano
-//            list($dia, $mes, $ano) = explode('/', $newFormatDate);
-//            // Descobre que dia é hoje e retorna a unix timestamp
-//            $hoje = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
-//            // Descobre a unix timestamp da data de nascimento do cliente
-//            $diadonascimento = mktime( 0, 0, 0, $mes, $dia, $ano);
-//            // Depois apenas fazemos o cálculo
-//            $idade = floor((((($hoje - $diadonascimento) / 60) / 60) / 24) / 365.25);
-//        /* FIM CALCULO DA IDADE*/
-//
-//        $cliente->idade = $idade;
-//
-//
-//
-//       // $cliente->update(Cliente::all());
     }
 
     /**
@@ -186,6 +171,11 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
+
+        if(!Auth::user()){
+            return redirect('/logout');
+        }
+
         $cliente = Cliente::find($id);
 
         if(isset($cliente)){
