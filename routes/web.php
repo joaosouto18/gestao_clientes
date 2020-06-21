@@ -11,6 +11,8 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/home', 'DashboardController@login');
+
 //Route::post('/login', 'LoginController@login');
 
 
