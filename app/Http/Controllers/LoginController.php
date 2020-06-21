@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Cliente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 use Validator;
 use Session;
 use DB;
