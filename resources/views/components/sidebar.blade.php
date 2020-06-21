@@ -1,7 +1,7 @@
 <div class="sidebar" id="sidebar">
 
-    <div class="loja-info">
-        <div class="loja-nome">
+    <div class="info">
+        <div class="nome">
             {{ ucwords(Auth::user()->name) }}
 
         </div>

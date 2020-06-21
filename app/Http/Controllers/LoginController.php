@@ -3,10 +3,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Cliente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use Session;
+use DB;
 
 
 
@@ -52,11 +54,18 @@ class LoginController extends Controller
     function dashboard(Request $request)
     {
 
+        //$results = DB::select('select * from users where id = :id', ['id' => 3]);
+
+        //$clientes = Cliente::table('users')->get();
+        $qtdClientes = DB::table('users')->count();
+
+
         if(Session::get('usuario') == "logado")
         {
-            var_dump();;
+//            var_dump("ENTROU");
+//            exit();
 
-            redirect('/dashboard');
+            return view ('/dashboard', compact('qtdClientes'));
         }else{
             redirect('/');
         }
@@ -81,13 +90,6 @@ class LoginController extends Controller
             return view('login');
         }
 
-
-
-
-//
-//        if($value == NULL){
-//            return view('/login');
-//        }
 
         return view('dashboard');
     }

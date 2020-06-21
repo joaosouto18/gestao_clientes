@@ -35,7 +35,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">@</span>
                                 </div>
-                                <input type="text" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="Ex: email@email.com" aria-label="Username" aria-describedby="basic-addon1"
+                                <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="Ex: email@email.com" aria-label="Username" aria-describedby="basic-addon1"
                                        value="{{ old('email') }}">
                                 <div class="invalid-feedback">
                                     @if ($errors->has('email'))
