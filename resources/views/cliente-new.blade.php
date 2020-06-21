@@ -84,7 +84,7 @@
 
 
         //máscaras
-        $('#tel').mask("(99) 9999-9999?9")
+        $('#tel').mask("(99) 9999-999?9")
     .focusout(function (event) {
             var target, phone, element;
             target = (event.currentTarget) ? event.currentTarget : event.srcElement;
