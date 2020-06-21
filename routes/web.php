@@ -17,7 +17,7 @@ Route::get('/login', function () {
 Route::post('/checklogin', 'LoginController@checklogin')->name('login.submit');
 
 
-Route::post('/dashboard', 'DashboardController@dashboard');
+//Route::post('/dashboard', 'DashboardController@dashboard');
 
 Route::get('/dashboard', 'DashboardController@dashboard');
 
