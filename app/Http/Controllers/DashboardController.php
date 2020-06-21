@@ -14,12 +14,6 @@ use Session;
 class DashboardController extends Controller
 {
 
-    public function __construct()
-    {
-        if(!Auth::user()){
-            return redirect('/logout');
-        }
-    }
 
     public function dashboard()
     {

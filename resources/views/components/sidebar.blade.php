@@ -9,6 +9,11 @@
 
     <table class="table table-ordered table-sidebar">
         <tbody>
+
+            <tr>
+                <td class="td-sidebar"><a href="{{ route('dashboard') }}"><i class="fas fa-home"></i>   Dashboard</a></td>
+            </tr>
+
             <tr>
                 <td class="td-sidebar"><a href="{{ route('lista_clientes') }}"><i class="fas fa-user-alt"></i>   Clientes</a></td>
             </tr>

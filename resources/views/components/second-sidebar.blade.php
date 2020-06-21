@@ -3,10 +3,11 @@
         <tbody>
 
             <tr>
-                <td class="td-sidebar">Clientes</td>
+                <td class="td-sidebar">Dashboard</td>
             </tr>
+
             <tr>
-                <td class="td-sidebar">Cadastro</td>
+                <td class="td-sidebar">Clientes</td>
             </tr>
 
             <tr>

@@ -1,23 +1,24 @@
-
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
 <head>
-    <title>Sysfar - Login</title>
+    <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link href="{{ URL::asset('css/login.css') }}" rel="stylesheet" type="text/css" >
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
+    <script src="https://kit.fontawesome.com/7dc068aa29.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+    <title>Gestão Comercial/Login</title>
 
 
 </head>
 <body>
+
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
@@ -43,7 +44,6 @@
             <input type="submit" class="fadeIn fourth" value="Entrar">
         </form>
 
-        <!-- Remind Passowrd -->
         <div id="formFooter">
             @if(isset(Auth::user()->email))
                 <script>window.location="/dashboard";</script>
@@ -68,6 +68,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>

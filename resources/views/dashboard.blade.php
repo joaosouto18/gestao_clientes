@@ -7,7 +7,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-10">
-                        <h5 class="card-title"><i class="fas fa-user-circle"></i> Dashboard</h5>
+                        <h5 class="card-title"><i class="fa fa-area-chart"></i> Painel</h5>
                     </div>
                 </div>
 

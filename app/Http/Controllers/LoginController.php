@@ -3,13 +3,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Cliente;
 use Illuminate\Http\Request;
 use Auth;
 use Validator;
-use Session;
-use DB;
-use App\User;
 
 use Illuminate\Support\Facades\Redirect;
 
@@ -48,7 +44,6 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        Session::flush();
         Auth::logout();
 
         return Redirect::to('/login');
