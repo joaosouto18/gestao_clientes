@@ -65,7 +65,7 @@ class ClienteController extends Controller
 
         $request->validate([
             'nome' => 'required|min:3',
-            'email' => 'required',
+            'email' => 'required|email|unique:clientes',
             'birth_date' => 'required'
         ], $message);
 
