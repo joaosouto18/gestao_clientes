@@ -16,15 +16,10 @@ class CreateClientesTable extends Migration
         Schema::create('clientes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            $table->string('telefone_fixo')->nullable();
-            $table->string('telefone_celular')->nullable();
+            $table->string('telefone')->nullable();
             $table->string('email');
-            $table->string('cpf');
-            $table->string('rg');
-            $table->unsignedBigInteger('empresa_id')->unsigned();
-            $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade');
-            $table->unsignedBigInteger('endereco_id')->unsigned();
-            $table->foreign('endereco_id')->references('id')->on('enderecos')->onDelete('cascade');
+            $table->string('idade');
+            $table->string('birth_date');
             $table->timestamps();
         });
     }
