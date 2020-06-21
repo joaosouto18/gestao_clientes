@@ -21,7 +21,7 @@ class DashboardController extends Controller
                 return redirect('/logout');
             }
 
-            $qtdClientes = DB::table('users')->count();
+            $qtdClientes = DB::table('clientes')->count();
             return view ('dashboard', compact('qtdClientes'));
 
     }
