@@ -19,6 +19,8 @@ Route::post('/checklogin', 'LoginController@checklogin')->name('login.submit');
 
 Route::post('/dashboard', 'DashboardController@dashboard');
 
+Route::get('/dashboard', 'DashboardController@dashboard');
+
 
 //Route::group(['middleware' => ['auth']], function (){
     //Route::get('/logout','LoginController@logout')->name('logout');
