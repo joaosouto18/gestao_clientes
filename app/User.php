@@ -28,6 +28,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
+
+    //Alterado apagar branch
     /**
      * The attributes that should be cast to native types.
      *
